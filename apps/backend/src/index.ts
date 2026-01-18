@@ -12,7 +12,7 @@ app.post("/addTodo", async(req , res)=>{
     const todo = await prisma.todo.create({
         data:{
             userId:req.body.userId,
-            title:"Todo",
+            title:"Todo"+new Date().toISOString(),
             completed:false,
             createdAt: new Date(),
             updatedAt: new Date()
