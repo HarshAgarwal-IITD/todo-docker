@@ -21,8 +21,8 @@ jobs:
         with :
           context: .
           file : Docker/DockerFile.web
-          build-args:
-            - DB_URL=${{ secrets.DB_URL }}
+          build-args: |
+            DB_URL=${{ secrets.DB_URL }}
           push : true
           tags : ${{ secrets.DOCKER_USERNAME }}/todo-app-web:${{ github.sha }}
          
