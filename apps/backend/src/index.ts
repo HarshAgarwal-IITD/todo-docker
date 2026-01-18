@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json());
 app.get("/todos",async (req,res)=>{
     const todos = await prisma.todo.findMany()
-    console.log(todos);
+    
     return res.status(200).json(todos);
 })
 app.post("/addTodo", async(req , res)=>{
